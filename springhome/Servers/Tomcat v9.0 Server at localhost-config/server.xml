@@ -64,7 +64,7 @@
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
-               port="8090" protocol="HTTP/1.1"
+               port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
     -->
@@ -149,7 +149,9 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="HelloWeb" path="/biz" reloadable="true" source="org.eclipse.jst.jee.server:HelloWeb"/></Host>
+      <Context docBase="HelloWeb" path="/biz1" reloadable="true" source="org.eclipse.jst.jee.server:HelloWeb"/>
+      <Context docBase="HelloWorldWeb" path="/biz" reloadable="true" source="org.eclipse.jst.jee.server:HelloWorldWeb"/>
+      <Context docBase="MVCDemo" path="/MVCDemo" reloadable="true" source="org.eclipse.jst.jee.server:MVCDemo"/><Context docBase="MembershipWeb" path="/demo" reloadable="true" source="org.eclipse.jst.jee.server:MembershipWeb"/></Host>
     </Engine>
   </Service>
 </Server>
